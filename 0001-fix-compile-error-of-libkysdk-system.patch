@@ -1,0 +1,36 @@
+From 553b45f54f9a7c736d8edb6f702b2d9497cd03aa Mon Sep 17 00:00:00 2001
+From: peijiankang <peijiankang@kylinos.cn>
+Date: Thu, 3 Nov 2022 11:37:28 +0800
+Subject: [PATCH] fix compile error of libkysdk-system
+
+---
+ src/systemtime/CMakeLists.txt | 13 ++++++++++++-
+ 1 file changed, 12 insertions(+), 1 deletion(-)
+
+diff --git a/src/systemtime/CMakeLists.txt b/src/systemtime/CMakeLists.txt
+index 69c3a44..c2696eb 100644
+--- a/src/systemtime/CMakeLists.txt
++++ b/src/systemtime/CMakeLists.txt
+@@ -13,7 +13,18 @@ find_library(DBUS_LIB dbus-1)
+ find_library(DBUS_GLIB_LIB dbus-glib-1)
+ find_library(THREAD_LIB pthread)
+ link_directories(/usr/lib/kysdk/kysdk-base/)
+-include_directories(${PKGS_INCLUDE_DIRS})
++include_directories(${PKGS_INCLUDE_DIRS}  /usr/include/kysdk/kysdk-base)
+ # SET( EXECUTABLE_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/bin)
+ ADD_EXECUTABLE(systime m_systime.c)
+ target_link_libraries(systime ${GLIBC_LIB} ${DBUS_LIB} ${DBUS_GLIB_LIB} ${THREAD_LIB} ${TIMER_LIST_C} kytimer kylog kyconf)
++
++install(TARGETS systime
++	DESTINATION /usr/bin)
++install(FILES com.kylin.kysdk.TimeServer.conf
++	DESTINATION /etc/dbus-1/system.d/)
++install(FILES kysdk-systime.service
++	DESTINATION /lib/systemd/system/)
++install(FILES m_systime.h
++	DESTINATION /usr/include/kysdk/kysdk-system)
++
++
+-- 
+2.36.1
+
