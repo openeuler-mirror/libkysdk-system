@@ -21,7 +21,7 @@ index 7f7ea66..b34b924 100644
  add_subdirectory(src)
 +
 +install(FILES development-files/kysdk-disk.pc development-files/kysdk-filesystem.pc development-files/kysdk-hardware.pc development-files/kysdk-location.pc development-files/kysdk-net.pc development-files/kysdk-ocr.pc development-files/kysdk-package.pc development-files/kysdk-powermanagement.pc development-files/kysdk-proc.pc development-files/kysdk-realtime.pc development-files/kysdk-sysinfo.pc development-files/kysdk-system.pc
-+	DESTINATION /usr/share/kgconfig/)
++	DESTINATION /usr/share/pkgconfig/)
 +install(FILES development-files/kysdk-system.conf
 +	DESTINATION /etc/ld.so.conf.d/)
 diff --git a/src/kdkocr/CMakeLists.txt b/src/kdkocr/CMakeLists.txt
