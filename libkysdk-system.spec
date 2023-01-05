@@ -2,7 +2,7 @@
 
 Name:          libkysdk-system
 Version:       2.0.0
-Release:       1
+Release:       2
 Summary:       Kylin Software Development Kit - System Layer Kit
 License:       GPL-2+
 URL:           http://www.ukui.org
@@ -282,14 +282,14 @@ fi
 %files 
 
 %files -n libkysdk-system-devel
-%{_datadir}/kgconfig/kysdk-system.pc
+%{_datadir}/pkgconfig/kysdk-system.pc
 
 %files -n libkysdk-disk
 %{_prefix}/lib/kysdk/kysdk-system/libkydiskinfo.so*
 
 %files -n libkysdk-disk-devel
 %{_includedir}/kysdk/kysdk-system/libkydiskinfo.h
-%{_datadir}/kgconfig/kysdk-disk.pc
+%{_datadir}/pkgconfig/kysdk-disk.pc
 
 %files -n libkysdk-systime
 %{_bindir}/systime
@@ -305,7 +305,7 @@ fi
 %files -n libkysdk-sysinfo-devel
 %{_includedir}/kysdk/kysdk-system/libkysysinfo.hpp
 %{_includedir}/kysdk/kysdk-system/libkysysinfo.h
-%{_datadir}/kgconfig/kysdk-sysinfo.pc
+%{_datadir}/pkgconfig/kysdk-sysinfo.pc
 
 %files -n libkysdk-filesystem
 %{_prefix}/lib/kysdk/kysdk-system/libkyfilewatcher.so*
@@ -313,7 +313,7 @@ fi
 %files -n libkysdk-filesystem-devel
 %{_includedir}/kysdk/kysdk-system/libkyfilewatcher.hpp
 %{_includedir}/kysdk/kysdk-system/libkyfilewatcher_global.hpp
-%{_datadir}/kgconfig/kysdk-filesystem.pc
+%{_datadir}/pkgconfig/kysdk-filesystem.pc
 
 %files -n libkysdk-hardware
 %{_prefix}/lib/kysdk/kysdk-system/libkyhw.so*
@@ -325,14 +325,14 @@ fi
 %{_includedir}/kysdk/kysdk-system/libkybios.h
 %{_includedir}/kysdk/kysdk-system/libkyboard.h
 %{_includedir}/kysdk/kysdk-system/libkyusb.h
-%{_datadir}/kgconfig/kysdk-hardware.pc
+%{_datadir}/pkgconfig/kysdk-hardware.pc
 
 %files -n libkysdk-package
 %{_prefix}/lib/kysdk/kysdk-system/libkypackage.so*
 
 %files -n libkysdk-package-devel
 %{_includedir}/kysdk/kysdk-system/libkypackages.h
-%{_datadir}/kgconfig/kysdk-package.pc
+%{_datadir}/pkgconfig/kysdk-package.pc
 
 %files -n libkysdk-proc
 %{_prefix}/lib/kysdk/kysdk-system/libkyrtinfo.so*
@@ -340,14 +340,14 @@ fi
 %files -n libkysdk-proc-devel
 %{_includedir}/kysdk/kysdk-system/libkyrtinfo.h
 %{_includedir}/kysdk/kysdk-system/libkyprocess.h
-%{_datadir}/kgconfig/kysdk-proc.pc
+%{_datadir}/pkgconfig/kysdk-proc.pc
 
 %files -n libkysdk-powermanagement
 %{_prefix}/lib/kysdk/kysdk-system/libkypowermanagement.so*
 
 %files -n libkysdk-powermanagement-devel
 %{_includedir}/kysdk/kysdk-system/libkylockscreen.h
-%{_datadir}/kgconfig/kysdk-powermanagement.pc
+%{_datadir}/pkgconfig/kysdk-powermanagement.pc
 
 %files -n libkysdk-ocr
 %{_prefix}/lib/kysdk/kysdk-system/libkyocr.so*
@@ -356,7 +356,7 @@ fi
 
 %files -n libkysdk-ocr-devel
 %{_includedir}/kysdk/kysdk-system/libkyocr.hpp
-%{_datadir}/kgconfig/kysdk-ocr.pc
+%{_datadir}/pkgconfig/kysdk-ocr.pc
 
 %files -n libkysdk-systemcommon
 %{_sysconfdir}/ld.so.conf.d/kysdk-system.conf
@@ -369,24 +369,27 @@ fi
 
 %files -n libkysdk-location-devel
 %{_includedir}/kysdk/kysdk-system/libkylocation.h
-%{_datadir}/kgconfig/kysdk-location.pc
+%{_datadir}/pkgconfig/kysdk-location.pc
 
 %files -n libkysdk-net
 %{_prefix}/lib/kysdk/kysdk-system/libkynetinfo.so*
 
 %files -n libkysdk-net-devel
 %{_includedir}/kysdk/kysdk-system/libkynetinfo.h
-%{_datadir}/kgconfig/kysdk-net.pc
+%{_datadir}/pkgconfig/kysdk-net.pc
 
 %files -n libkysdk-realtime
 %{_prefix}/lib/kysdk/kysdk-system/libkyrealtime.so*
 
 %files -n libkysdk-realtime-devel
 %{_includedir}/kysdk/kysdk-system/libkyrealtimeinfo.h
-%{_datadir}/kgconfig/kysdk-realtime.pc
+%{_datadir}/pkgconfig/kysdk-realtime.pc
 
 
 %changelog
+* Thu Jan 5 2023 peijiankang <peijiankang@kylinos.cn> - 2.0.0-2
+- update installdir from kgconfig to pkgconfig
+
 * Mon Dec 5 2022 peijiankang <peijiankang@kylinos.cn> - 2.0.0-1
 - update version to 2.0.0
 
