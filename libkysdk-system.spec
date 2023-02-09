@@ -1,8 +1,6 @@
-%define debug_package %{nil}
-
 Name:          libkysdk-system
 Version:       2.0.0
-Release:       2
+Release:       3
 Summary:       Kylin Software Development Kit - System Layer Kit
 License:       GPL-2+
 URL:           http://www.ukui.org
@@ -249,14 +247,14 @@ Requires: libkysdk-realtime
 
 %build
 mkdir build && pushd build
-cmake ..
-make -j4
+%cmake ..
+%{make_build}
 popd
 
 %install
 rm -rf $RPM_BUILD_ROOT 
 pushd build
-make DESTDIR=%{buildroot} install
+%{make_install} DESTDIR=%{buildroot}
 popd
 
 %clean
@@ -387,6 +385,9 @@ fi
 
 
 %changelog
+* Thu Feb 09 2023 peijiankang <peijiankang@kylinos.cn> - 2.0.0-3
+- add build debuginfo and debugsource
+
 * Thu Jan 5 2023 peijiankang <peijiankang@kylinos.cn> - 2.0.0-2
 - update installdir from kgconfig to pkgconfig
 
