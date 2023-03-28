@@ -1,6 +1,6 @@
 Name:          libkysdk-system
 Version:       2.0.0
-Release:       3
+Release:       4
 Summary:       Kylin Software Development Kit - System Layer Kit
 License:       GPL-2+
 URL:           http://www.ukui.org
@@ -180,7 +180,7 @@ Requires: opencv leptonica libarchive tesseract libkysdk-systemcommon
 
 %package -n libkysdk-ocr-devel
 Summary:  AI character recognition function - Development libraries
-Requires: libkysdk-ocr leptonica-devel libopencv-devel libarchive-devel tesseract-devel
+Requires: libkysdk-ocr leptonica-devel opencv libarchive-devel tesseract-devel
 
 %description -n libkysdk-ocr-devel
 %{summary}.
@@ -385,6 +385,9 @@ fi
 
 
 %changelog
+* Tue Mar 28 2023 peijiankang <peijiankang@kylinos.cn> - 2.0.0-4
+- mv Requires libopencv-devel to opencv
+
 * Thu Feb 09 2023 peijiankang <peijiankang@kylinos.cn> - 2.0.0-3
 - add build debuginfo and debugsource
 
