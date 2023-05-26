@@ -1,8 +1,8 @@
 %define debug_package %{nil}
 
 Name:          libkysdk-system
-Version:       2.0.0
-Release:       4
+Version:       2.0.0.0
+Release:       1
 Summary:       Kylin Software Development Kit - System Layer Kit
 License:       GPL-2+
 URL:           http://www.ukui.org
@@ -387,6 +387,9 @@ fi
 
 
 %changelog
+* Fri May 26 2023 peijiankang <peijiankang@kylinos.cn> - 2.0.0.0-1
+- update version to 2.0.0.0
+
 * Tue Mar 28 2023 peijiankang <peijiankang@kylinos.cn> - 2.0.0-4
 - mv Requires libopencv-devel to opencv
 
