@@ -1,6 +1,6 @@
 Name:          libkysdk-system
 Version:       2.0.0.0
-Release:       1
+Release:       2
 Summary:       Kylin Software Development Kit - System Layer Kit
 License:       GPL-2+
 URL:           http://www.ukui.org
@@ -246,6 +246,10 @@ Requires: libkysdk-realtime
 %patch01 -p1
 
 %build
+%if "%toolchain" == "clang"
+	export CFLAGS="$CFLAGS -Wno-error=int-conversion"
+	export CXXFLAGS="$CXXFLAGS -Wno-error=int-conversion"
+%endif
 mkdir build && pushd build
 %cmake ..
 %{make_build}
@@ -385,6 +389,9 @@ fi
 
 
 %changelog
+* Tue Jun 20 2023 yoo <sunyuechi@iscas.ac.cn> - 2.0.0.0-2
+- fix clang build error
+
 * Fri May 26 2023 peijiankang <peijiankang@kylinos.cn> - 2.0.0.0-1
 - update version to 2.0.0.0
 
